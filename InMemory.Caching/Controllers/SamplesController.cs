@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using System;
 
 namespace InMemory.Caching.Controllers
 {
@@ -8,6 +9,15 @@ namespace InMemory.Caching.Controllers
     [ApiController]
     public class SamplesController : ControllerBase
     {
+
+        //In-Memory Cache
+        //Veriler uygulama sunucusunun RAM'inde tutulur.
+        //Tek bir sunucuya özeldir, ölçeklendirme (load balancing) durumunda diğer sunucular veriye erişemez.
+        //Çok hızlıdır, ancak uygulama yeniden başlatıldığında cache temizlenir.
+        //Örnek: IMemoryCache(ASP.NET Core'da yerleşik)
+        // Hızlı ama tek sunuculuk çözümler için idealdir.
+
+
         readonly IMemoryCache _memoryCache;
 
         public SamplesController(IMemoryCache memoryCache)
@@ -15,7 +25,7 @@ namespace InMemory.Caching.Controllers
             _memoryCache = memoryCache;
         }
 
-      
+
 
         [HttpGet("setName/{name}")]
         public void SetName(string name)
@@ -28,7 +38,7 @@ namespace InMemory.Caching.Controllers
         public string GetName()
         {
             //datanın bo gelme ihtilamine karşın önlem
-            if (_memoryCache.TryGetValue<string>("name", out string name));
+            if (_memoryCache.TryGetValue<string>("name", out string name)) ;
             {
                 return name.Substring(3);
             }
@@ -43,9 +53,9 @@ namespace InMemory.Caching.Controllers
             _memoryCache.Set<DateTime>("date", DateTime.Now, options: new()
             {
                 AbsoluteExpiration = DateTime.Now.AddSeconds(30),
-                SlidingExpiration=TimeSpan.FromSeconds(5)
+                SlidingExpiration = TimeSpan.FromSeconds(5)
 
-            }) ;
+            });
         }
         [HttpGet("getDate")]
         public DateTime getDate()

@@ -14,6 +14,12 @@ namespace Distributed.Caching
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //Eklenmeli
+            builder.Services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = "localhost:6379"; // Redis port
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
