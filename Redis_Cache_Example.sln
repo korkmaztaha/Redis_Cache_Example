@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemory.Caching", "InMemor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distributed.Caching", "Distributed.Caching\Distributed.Caching.csproj", "{012D8193-B861-49CD-BDC0-0F8D038A091E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.Pub.Sub.Publisher", "Redis.Pub.Sub\Redis.Pub.Sub.Publisher.csproj", "{433DBB4A-7F1F-40A3-9721-CF5C6B60DF39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis.Pub.Sub.Subscriber", "Redis.Pub.Sub.Subscriber\Redis.Pub.Sub.Subscriber.csproj", "{469CDB18-453A-4E0F-972B-60680BC316FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{012D8193-B861-49CD-BDC0-0F8D038A091E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{012D8193-B861-49CD-BDC0-0F8D038A091E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{012D8193-B861-49CD-BDC0-0F8D038A091E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433DBB4A-7F1F-40A3-9721-CF5C6B60DF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433DBB4A-7F1F-40A3-9721-CF5C6B60DF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433DBB4A-7F1F-40A3-9721-CF5C6B60DF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433DBB4A-7F1F-40A3-9721-CF5C6B60DF39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469CDB18-453A-4E0F-972B-60680BC316FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469CDB18-453A-4E0F-972B-60680BC316FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469CDB18-453A-4E0F-972B-60680BC316FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469CDB18-453A-4E0F-972B-60680BC316FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
